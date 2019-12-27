@@ -1,0 +1,69 @@
+*** SPICE deck for cell Inverterx2{lay} from library Homework_3
+*** Created on Thu Oct 24, 2019 23:23:25
+*** Last revised on Thu Oct 24, 2019 23:47:17
+*** Written on Fri Oct 25, 2019 19:45:08 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+***    P-Active:	areacap=0.9FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    N-Active:	areacap=0.9FF/um^2,	edgecap=0.0FF/um,	res=3.0ohms/sq
+***    Polysilicon-1:	areacap=0.1467FF/um^2,	edgecap=0.0608FF/um,	res=6.2ohms/sq
+***    Polysilicon-2:	areacap=1.0FF/um^2,	edgecap=0.0FF/um,	res=50.0ohms/sq
+***    Transistor-Poly:	areacap=0.09FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    Poly-Cut:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=2.2ohms/sq
+***    Active-Cut:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    Metal-1:	areacap=0.1209FF/um^2,	edgecap=0.1104FF/um,	res=0.078ohms/sq
+***    Via1:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=1.0ohms/sq
+***    Metal-2:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via2:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.9ohms/sq
+***    Metal-3:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via3:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.8ohms/sq
+***    Metal-4:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via4:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.8ohms/sq
+***    Metal-5:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via5:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.8ohms/sq
+***    Metal-6:	areacap=0.0423FF/um^2,	edgecap=0.1273FF/um,	res=0.036ohms/sq
+***    Hi-Res:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=1.0ohms/sq
+
+*** TOP LEVEL CELL: Homework_3:Inverterx2{lay}
+Mnmos@2 net@40 In#2nmos@2_poly-right gnd gnd NMOS L=0.35U W=0.875U AS=5.13P AD=1.493P PS=14.35U PD=4.9U
+Mnmos@4 Vout net@40#6nmos@4_poly-right gnd gnd NMOS L=0.35U W=0.875U AS=5.13P AD=1.493P PS=14.35U PD=4.9U
+Mpmos@2 vdd In#0pmos@2_poly-right net@40 vdd PMOS L=0.35U W=1.75U AS=1.493P AD=6.952P PS=4.9U PD=16.275U
+Mpmos@4 vdd net@40#4pmos@4_poly-right Vout vdd PMOS L=0.35U W=1.75U AS=1.493P AD=6.952P PS=4.9U PD=16.275U
+** Extracted Parasitic Capacitors ***
+C0 net@40 0 1.864fF
+C1 Vout 0 1.866fF
+C2 In#1pin@13_polysilicon-1 0 0.187fF
+C3 net@40#5pin@23_polysilicon-1 0 0.187fF
+** Extracted Parasitic Resistors ***
+R0 net@40 net@40 0
+R1 In#0pmos@2_poly-right In#0pmos@2_poly-right##0 9.3
+R2 In#0pmos@2_poly-right##0 In#1pin@13_polysilicon-1 9.3
+R3 In#1pin@13_polysilicon-1 In#1pin@13_polysilicon-1##0 7.233
+R4 In#1pin@13_polysilicon-1##0 In#1pin@13_polysilicon-1##1 7.233
+R5 In#1pin@13_polysilicon-1##1 In#2nmos@2_poly-right 7.233
+R6 In In##0 8.783
+R7 In##0 In##1 8.783
+R8 In##1 In##2 8.783
+R9 In##2 In##3 8.783
+R10 In##3 In##4 8.783
+R11 In##4 In#1pin@13_polysilicon-1 8.783
+R12 Vout Vout 0
+R13 net@40#4pmos@4_poly-right net@40#4pmos@4_poly-right##0 9.3
+R14 net@40#4pmos@4_poly-right##0 net@40#5pin@23_polysilicon-1 9.3
+R15 net@40#5pin@23_polysilicon-1 net@40#5pin@23_polysilicon-1##0 7.233
+R16 net@40#5pin@23_polysilicon-1##0 net@40#5pin@23_polysilicon-1##1 7.233
+R17 net@40#5pin@23_polysilicon-1##1 net@40#6nmos@4_poly-right 7.233
+R18 net@40 net@40##0 8.783
+R19 net@40##0 net@40##1 8.783
+R20 net@40##1 net@40##2 8.783
+R21 net@40##2 net@40##3 8.783
+R22 net@40##3 net@40##4 8.783
+R23 net@40##4 net@40#5pin@23_polysilicon-1 8.783
+
+* Spice Code nodes in cell cell 'Homework_3:Inverterx2{lay}'
+VDD VDD 0 DC 3.3
+VGND GND 0 DC 0
+VIN In 0 PULSE (3.3 0 0 0.1n 0.1n 10n 20n)
+.TRAN 0 50n
+.include C:\Users\kille\Desktop\Electric\C5_models.txt
+.END

@@ -1,0 +1,27 @@
+*** SPICE deck for cell ABCD{lay} from library Homework-2
+*** Created on Thu Oct 03, 2019 15:55:48
+*** Last revised on Fri Oct 04, 2019 13:51:46
+*** Written on Fri Oct 04, 2019 13:57:25 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: Homework-2:ABCD{lay}
+Mnmos@1 net@29 A Vout gnd NMOS L=0.35U W=1.75U AS=1.608P AD=1.225P PS=4.462U PD=3.15U
+Mnmos@3 gnd B net@29 gnd NMOS L=0.35U W=1.75U AS=1.225P AD=5.13P PS=3.15U PD=12.95U
+Mnmos@4 net@41 D gnd gnd NMOS L=0.35U W=1.75U AS=5.13P AD=1.225P PS=12.95U PD=3.15U
+Mnmos@5 Vout C net@41 gnd NMOS L=0.35U W=1.75U AS=1.225P AD=1.608P PS=3.15U PD=4.462U
+Mpmos@0 Vout A net@21 vdd PMOS L=0.35U W=1.75U AS=1.991P AD=1.608P PS=5.775U PD=4.462U
+Mpmos@1 net@39 B Vout vdd PMOS L=0.35U W=1.75U AS=1.608P AD=1.225P PS=4.462U PD=3.15U
+Mpmos@2 vdd D net@39 vdd PMOS L=0.35U W=1.75U AS=1.225P AD=5.13P PS=3.15U PD=12.95U
+Mpmos@3 net@51 C vdd vdd PMOS L=0.35U W=1.75U AS=5.13P AD=1.991P PS=12.95U PD=5.775U
+
+* Spice Code nodes in cell cell 'Homework-2:ABCD{lay}'
+VDD VDD 0 DC 3.3
+VGND GND 0 DC 0
+Vin A 0 PULSE (3.3 0 0 0.01n 0.01n 10n 20n)
+Vin2 B 0 PULSE (3.3 0 0 0.01n 0.01n 20n 40n)
+Vin3 C 0 PULSE (3.3 0 0 0.01n 0.01n 40n 80n)
+Vin4 D 0 PULSE (3.3 0 0 0.01n 0.01n 80n 160n)
+.TRAN 0 200n
+.include C:\Users\kille\Desktop\Electric\C5_models.txt
+.END

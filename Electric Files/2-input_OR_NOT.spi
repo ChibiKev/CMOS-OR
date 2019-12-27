@@ -1,0 +1,23 @@
+*** SPICE deck for cell 2-input_OR_NOT{sch} from library Project1
+*** Created on Tue Sep 17, 2019 13:23:06
+*** Last revised on Thu Sep 19, 2019 13:59:40
+*** Written on Thu Sep 19, 2019 13:59:46 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: 2-input_OR_NOT{sch}
+Mnmos@1 Out B gnd gnd NMOS L=0.35U W=0.875U
+Mnmos@2 Out A gnd gnd NMOS L=0.35U W=0.875U
+Mpmos@1 vdd B net@57 vdd PMOS L=0.35U W=1.75U
+Mpmos@2 net@57 A Out vdd PMOS L=0.35U W=1.75U
+
+* Spice Code nodes in cell cell '2-input_OR_NOT{sch}'
+VDD VDD 0 DC 3.3
+VGND GND 0 DC 0
+Vin A 0 PULSE (3.3 0 0 0.01n 0.01n 10n 20n)
+Vin2 B 0 PULSE (3.3 0 0 0.01n 0.01n 20n 40n)
+.TRAN 0 50n
+.include C:\Users\kille\Desktop\Electric\C5_models.txt
+.END

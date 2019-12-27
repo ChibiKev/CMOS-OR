@@ -1,0 +1,23 @@
+*** SPICE deck for cell 2-input_OR{lay} from library Project1
+*** Created on Fri Sep 20, 2019 17:45:39
+*** Last revised on Sun Sep 22, 2019 13:11:27
+*** Written on Sun Sep 22, 2019 22:42:51 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: 2-input_OR{lay}
+Mnmos@0 gnd A net@9 gnd NMOS L=0.35U W=1.75U AS=1.48P AD=4.134P PS=4.025U PD=11.258U
+Mnmos@1 net@9 B gnd gnd NMOS L=0.35U W=1.75U AS=4.134P AD=1.48P PS=11.258U PD=4.025U
+Mnmos@2 Vout net@9 gnd gnd NMOS L=0.35U W=1.75U AS=4.134P AD=1.991P PS=11.258U PD=5.775U
+Mpmos@1 net@53 B net@9 vdd PMOS L=0.35U W=1.75U AS=1.48P AD=1.914P PS=4.025U PD=3.937U
+Mpmos@2 vdd net@9 Vout vdd PMOS L=0.35U W=1.75U AS=1.991P AD=5.053P PS=5.775U PD=13.65U
+Mpmos@3 vdd A net@53 vdd PMOS L=0.35U W=1.75U AS=1.914P AD=5.053P PS=3.937U PD=13.65U
+
+* Spice Code nodes in cell cell '2-input_OR{lay}'
+VDD VDD 0 DC 3.3
+VGND GND 0 DC 0
+Vin A 0 PULSE (3.3 0 0 5ns 10ns 100ns 200ns)
+Vin2 B 0 PULSE (3.3 0 0 5ns 10ns 400ns 800ns)
+.TRAN 0 900ns
+.include C:\Users\kille\Desktop\Electric\C5_models.txt
+.END
